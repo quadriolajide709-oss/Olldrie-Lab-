@@ -1,0 +1,142 @@
+# Nmap 7.99 scan initiated Fri Jun  5 16:59:48 2026 as: /usr/lib/nmap/nmap --privileged -A -T5 -D RND: -oN nmapresult.txt 10 sigosec.com
+Nmap scan report for 10 (0.0.0.10)
+Host is up (0.0027s latency).
+All 1000 scanned ports on 10 (0.0.0.10) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: QEMU user mode network gateway (90%), AXIS 2100 Network Camera (90%), D-Link DP-300U, DP-G310, or Hamlet HPS01UU print server (90%), HP Tru64 UNIX 5.1A (90%), Sanyo PLC-XU88 digital video projector (90%), TRENDnet TV-IP100 webcam (90%), Vantage HD7100S satellite receiver (90%), IBM i 7.4 (90%), EasyPath PON switch (88%), Microsoft Windows Server 2003 (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   1.16 ms 0.0.0.10
+
+Nmap scan report for sigosec.com (37.60.234.128)
+Host is up (0.033s latency).
+rDNS record for 37.60.234.128: vmi3120633.contaboserver.net
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 9.6p1 Ubuntu 3ubuntu13.16 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|_  256 75:e7:f5:a8:3e:ac:af:89:56:03:38:ca:47:93:e9:2d (ED25519)
+80/tcp   open  http     nginx 1.24.0 (Ubuntu)
+|_http-title: 502 Bad Gateway
+443/tcp  open  ssl/http nginx 1.24.0 (Ubuntu)
+|_http-server-header: nginx/1.24.0 (Ubuntu)
+|_http-title: 400 The plain HTTP request was sent to HTTPS port
+| ssl-cert: Subject: commonName=ibrahimtaofeek.com
+| Subject Alternative Name: DNS:ibrahimtaofeek.com, DNS:proj.ibrahimtaofeek.com, DNS:www.ibrahimtaofeek.com
+| Not valid before: 2026-05-07T09:43:33
+|_Not valid after:  2026-08-05T09:43:32
+|_ssl-date: TLS randomness does not represent time
+5678/tcp open  rrac?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Accept-Ranges: bytes
+|     Cache-Control: public, max-age=86400
+|     Last-Modified: Tue, 26 May 2026 05:30:29 GMT
+|     ETag: W/"3c7e-19e62c3554f"
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 15486
+|     Vary: Accept-Encoding
+|     Date: Fri, 05 Jun 2026 16:00:07 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8" />
+|     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+|     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+|     <link rel="icon" href="/favicon.ico" />
+|     <meta name="n8n:config:rest-endpoint" content="cmVzdA=="><meta name="n8n:config:sentry" content="eyJkc24iOiIiLCJlbnZpcm9ubWVudCI6ImRldmVsb3BtZW50IiwicmVsZWFzZSI6Im44bkAyLjE1LjEifQ==">
+|     <link rel="stylesheet" href="/static/prefers-color-scheme.css">
+|     <script src="/static/base-path.js" type="text/javascript"></script>
+|     <script src="/static/posthog.init.js" t
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     Content-Security-Policy: default-src 'none'
+|     X-Content-Type-Options: nosniff
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 143
+|     Vary: Accept-Encoding
+|     Date: Fri, 05 Jun 2026 16:00:07 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <title>Error</title>
+|     </head>
+|     <body>
+|     <pre>Cannot OPTIONS /</pre>
+|     </body>
+|     </html>
+|   RTSPRequest: 
+|     HTTP/1.1 404 Not Found
+|     Content-Security-Policy: default-src 'none'
+|     X-Content-Type-Options: nosniff
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 143
+|     Vary: Accept-Encoding
+|     Date: Fri, 05 Jun 2026 16:00:08 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <title>Error</title>
+|     </head>
+|     <body>
+|     <pre>Cannot OPTIONS /</pre>
+|     </body>
+|_    </html>
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port5678-TCP:V=7.99%I=7%D=6/5%Time=6A22F287%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,3DA5,"HTTP/1\.1\x20200\x20OK\r\nAccept-Ranges:\x20bytes\r\nCach
+SF:e-Control:\x20public,\x20max-age=86400\r\nLast-Modified:\x20Tue,\x2026\
+SF:x20May\x202026\x2005:30:29\x20GMT\r\nETag:\x20W/\"3c7e-19e62c3554f\"\r\
+SF:nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x20154
+SF:86\r\nVary:\x20Accept-Encoding\r\nDate:\x20Fri,\x2005\x20Jun\x202026\x2
+SF:016:00:07\x20GMT\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html>\n<ht
+SF:ml\x20lang=\"en\">\n\t<head>\n\t\t<meta\x20charset=\"utf-8\"\x20/>\n\t\
+SF:t<meta\x20http-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge\"\x20/>\n
+SF:\t\t<meta\x20name=\"viewport\"\x20content=\"width=device-width,initial-
+SF:scale=1\.0\"\x20/>\n\t\t<link\x20rel=\"icon\"\x20href=\"/favicon\.ico\"
+SF:\x20/>\n\t\t<meta\x20name=\"n8n:config:rest-endpoint\"\x20content=\"cmV
+SF:zdA==\"><meta\x20name=\"n8n:config:sentry\"\x20content=\"eyJkc24iOiIiLC
+SF:JlbnZpcm9ubWVudCI6ImRldmVsb3BtZW50IiwicmVsZWFzZSI6Im44bkAyLjE1LjEifQ==\
+SF:">\n\t\t<link\x20rel=\"stylesheet\"\x20href=\"/static/prefers-color-sch
+SF:eme\.css\">\n\t\t<script\x20src=\"/static/base-path\.js\"\x20type=\"tex
+SF:t/javascript\"></script>\n\t\t<script\x20src=\"/static/posthog\.init\.j
+SF:s\"\x20t")%r(HTTPOptions,183,"HTTP/1\.1\x20404\x20Not\x20Found\r\nConte
+SF:nt-Security-Policy:\x20default-src\x20'none'\r\nX-Content-Type-Options:
+SF:\x20nosniff\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-
+SF:Length:\x20143\r\nVary:\x20Accept-Encoding\r\nDate:\x20Fri,\x2005\x20Ju
+SF:n\x202026\x2016:00:07\x20GMT\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x
+SF:20html>\n<html\x20lang=\"en\">\n<head>\n<meta\x20charset=\"utf-8\">\n<t
+SF:itle>Error</title>\n</head>\n<body>\n<pre>Cannot\x20OPTIONS\x20/</pre>\
+SF:n</body>\n</html>\n")%r(RTSPRequest,183,"HTTP/1\.1\x20404\x20Not\x20Fou
+SF:nd\r\nContent-Security-Policy:\x20default-src\x20'none'\r\nX-Content-Ty
+SF:pe-Options:\x20nosniff\r\nContent-Type:\x20text/html;\x20charset=utf-8\
+SF:r\nContent-Length:\x20143\r\nVary:\x20Accept-Encoding\r\nDate:\x20Fri,\
+SF:x2005\x20Jun\x202026\x2016:00:08\x20GMT\r\nConnection:\x20close\r\n\r\n
+SF:<!DOCTYPE\x20html>\n<html\x20lang=\"en\">\n<head>\n<meta\x20charset=\"u
+SF:tf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot\x20OPTIONS\
+SF:x20/</pre>\n</body>\n</html>\n");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: VoIP adapter|bridge|general purpose
+Running (JUST GUESSING): AT&T embedded (91%), Oracle Virtualbox (91%), Slirp (91%), QEMU (88%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:danny_gasparovski:slirp cpe:/a:qemu:qemu
+Aggressive OS guesses: AT&T BGW210 voice gateway (91%), Oracle Virtualbox Slirp NAT bridge (91%), QEMU user mode network gateway (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   2.44 ms vmi3120633.contaboserver.net (37.60.234.128)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Jun  5 17:00:41 2026 -- 2 IP addresses (2 hosts up) scanned in 54.46 seconds
