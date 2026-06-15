@@ -1,0 +1,214 @@
+NETWORK AND WEB RECONAISSANCE TOOLS DOCUMENTATION
+1. Whois
+OVERVIEW
+
+Whois is a command-line tool used to query domain registration information. It retrieves details about domain owners, registrars, registration dates, expiration dates, and name servers.
+
+COMMON USES
+Domain ownership lookup
+Registrar information gathering
+Domain expiration checks
+DNS and name server discovery
+
+INSTALLATION
+Ubuntu/Debian
+sudo apt update
+sudo apt install whois
+
+CentOS/RHEL
+sudo yum install whois
+
+macOS (Homebrew)
+brew install whois
+
+HOW TO USE
+Basic Domain Lookup
+whois example.com
+
+Lookup an IP Address
+whois 8.8.8.8
+
+Sample Output
+Domain Name: EXAMPLE.COM
+Registrar: ICANN
+Creation Date: 1995-08-14
+Expiration Date: 2025-08-13
+Name Servers:
+NS1.EXAMPLE.COM
+NS2.EXAMPLE.COM
+
+ADVANTAGES
+Simple to use
+Fast domain information retrieval
+Useful for reconnaissance
+
+LIMITATIONS
+Some domain owner information may be hidden due to privacy protection.
+
+
+
+2. Nikto
+OVERVIEW
+
+Nikto is an open-source web server scanner used to identify vulnerabilities, insecure configurations, outdated software, and potentially dangerous files.
+
+COMMON USES
+Web server security assessment
+Detecting outdated software
+Finding insecure configurations
+Discovering exposed files
+
+INSTALLATION
+Ubuntu/Debian
+sudo apt update
+sudo apt install nikto
+
+Kali Linux
+sudo apt install nikto
+
+From Source
+git clone https://github.com/sullo/nikto.git
+cd nikto/program
+perl nikto.pl
+
+HOW TO USE
+Basic Scan
+nikto -h http://example.com
+
+Scan HTTPS Website
+nikto -h https://example.com
+
+Save Results
+nikto -h http://example.com -o report.txt
+
+Sample Output
++ Server: Apache/2.4.54
++ X-Frame-Options header not present
++ Directory indexing enabled
++ Outdated Apache version detected
+
+ADVANTAGES
+Easy to use
+Large vulnerability database
+Open source
+
+LIMITATIONS
+Generates noticeable traffic
+May produce false positives
+
+
+3. Nmap
+OVERVIEW
+
+Nmap (Network Mapper) is a network discovery and security auditing tool used to identify hosts, services, operating systems, and open ports.
+
+COMMON USES
+Network inventory
+Host discovery
+Port scanning
+Service detection
+Security assessments
+
+INSTALLATION
+Ubuntu/Debian
+sudo apt update
+sudo apt install nmap
+
+CentOS/RHEL
+sudo yum install nmap
+
+macOS
+brew install nmap
+
+Windows
+
+Download from:
+
+Nmap Official Website
+
+HOW TO USE
+Scan a Single Host
+nmap 192.168.1.1
+
+Scan Specific Ports
+nmap -p 80,443 192.168.1.1
+
+Service Detection
+nmap -sV 192.168.1.1
+
+Operating System Detection
+sudo nmap -O 192.168.1.1
+
+Aggressive Scan
+sudo nmap -A 192.168.1.1
+
+Sample Output
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+
+ADVANTAGES
+Highly versatile
+Extensive scanning options
+Widely used in cybersecurity
+
+LIMITATIONS
+Some scans require elevated privileges
+Can trigger intrusion detection systems
+
+
+4. Gobuster
+OVERVIEW
+
+Gobuster is a directory, DNS, virtual host, and file brute-forcing tool written in Go. It is commonly used during web application reconnaissance.
+
+COMMON USES
+Directory enumeration
+File discovery
+DNS subdomain enumeration
+Virtual host discovery
+
+INSTALLATION
+Ubuntu/Debian
+sudo apt update
+sudo apt install gobuster
+
+Install with Go
+go install github.com/OJ/gobuster/v3@latest
+
+Kali Linux
+sudo apt install gobuster
+
+HOW TO USE
+Directory Enumeration
+gobuster dir -u http://example.com -w wordlist.txt
+
+DNS Enumeration
+gobuster dns -d example.com -w wordlist.txt
+
+Virtual Host Enumeration
+gobuster vhost -u http://example.com -w wordlist.txt
+
+Sample Output
+/admin
+/login
+/uploads
+/config
+
+ADVANTAGES
+Fast performance
+Multiple enumeration modes
+Easy installation
+
+LIMITATIONS
+Requires quality wordlists
+Can generate high traffic volumes
+
+
+Comparison Table
+Tool	Primary Purpose	Typical Target
+Whois	Domain information lookup	Domains and IPs
+Nikto	Web vulnerability scanning	Web servers
+Nmap	Network discovery and port scanning	Hosts and networks
+Gobuster	Directory and subdomain enumeration	Web applications and domains
