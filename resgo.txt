@@ -1,0 +1,17 @@
+$ gobuster dir -u sigosec.com -w go_result.txt -o resgo.txt
+===============================================================
+Gobuster v3.8.2
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://sigosec.com
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                go_result.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8.2
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+Progress: 0 / 1 (0.00%)
+2026/06/08 13:04:25 the server returns a status code that matches the provided options for non existing urls. http://sigosec.com/c26219a9-a7c8-4a5f-8b4c-a447f564e94c => 502 (Length: 166). Please exclude the response length or the status code or set the wildcard option.. To continue please exclude the status code or the length
